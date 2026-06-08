@@ -1,0 +1,32 @@
+---
+- name: Setup the system
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Update server and install essential packages
+      ansible.builtin.include_tasks: tasks/essential.yml
+
+    - name: Install apps to all nodes
+      ansible.builtin.include_tasks: tasks/oh_my_zsh.yml
+
+    - name: Install docker
+      ansible.builtin.include_tasks: tasks/docker.yml
+
+    # - name: Deploy docker apps to main
+    #   ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
+    #   loop:
+    #     - duplicati
+    #     - filebrowser
+    #     - heimdall
+    #     - monitoring
+    #     - syncthing
+    #     - uptime_kuma
+    #   when: server | default (false)
+
+    - name: Modify ownership of data and docker_apps directories
+      ansible.builtin.include_tasks: tasks/add_ownership.yml
+
+    - name: Reboot the cluster
+      ansible.builtin.reboot:
+        msg: "Rebooting cluster to finish setup"

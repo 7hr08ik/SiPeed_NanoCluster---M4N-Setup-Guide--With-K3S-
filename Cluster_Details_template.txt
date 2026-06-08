@@ -1,0 +1,60 @@
+
+Node Details
+============
+
+Name: RiskV Switch
+HostName:
+IP:
+MAC:
+
+Name: M4N Node 1
+Hostname: m4nCluster-node_1
+IP: 10.69.30.51
+MAC:
+
+Name: M4N Node 2
+Hostname: m4nCluster-node_2
+IP: 10.69.30.52
+MAC:
+
+Name: M4N Node 3
+Hostname: m4nCluster-node_3
+IP: 10.69.30.53
+MAC:
+
+Name: M4N Node 4
+Hostname: m4nCluster-node_4
+IP: 10.69.30.54
+MAC:
+
+
+Logins
+======
+
+User: root
+Pswd: root
+
+User: D_Eveloper
+Pswd:
+
+SSH
+===
+
+keyfile Pswd:
+
+Nomad
+=====
+
+>>> nomad acl bootstrap
+
+Accessor ID  =
+Secret ID    =
+Name         = Bootstrap Token
+Type         = management
+Global       = true
+Create Time  = 2026-03-18 22:10:21.001956872 +0000 UTC
+Expiry Time  = <none>
+Create Index = 122
+Modify Index = 123
+Policies     = n/a
+Roles        = n/a

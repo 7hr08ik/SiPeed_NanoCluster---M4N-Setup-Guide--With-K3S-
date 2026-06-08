@@ -1,0 +1,41 @@
+---
+username: "dev"
+home: /home/{{ username }}
+
+data_dir: /home/{{ username }}/data
+docker_dir: /home/{{ username }}/docker_apps
+
+puid: "1000"
+
+pgid: "1000"
+
+timezone: "Europe/London"
+
+packages:
+  - unzip
+  - wget
+  - curl
+  - git
+  - btop
+  - nano
+  - python3-full
+  - pip
+  - irqbalance
+  - cmake
+
+pip_packages:
+  - ansible
+  - github3.py
+  - docker
+
+docker_dependencies:
+  - ca-certificates
+  - gnupg
+  - curl
+
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin

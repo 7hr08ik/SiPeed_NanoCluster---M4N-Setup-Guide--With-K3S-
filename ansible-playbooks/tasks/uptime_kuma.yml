@@ -1,0 +1,14 @@
+---
+- name: Create uptime kuma container
+  community.docker.docker_container:
+    name: uptime_kuma
+    image: louislam/uptime-kuma:1
+    pull: true
+    state: started
+    restart_policy: unless-stopped
+    volumes:
+      - "{{ docker_dir }}/uptime_kuma/data:/app/data"
+    security_opts:
+      - no-new-privileges:true
+    networks:
+      - name: homelab
