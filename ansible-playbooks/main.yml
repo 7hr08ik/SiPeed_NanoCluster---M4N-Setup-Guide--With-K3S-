@@ -13,16 +13,16 @@
     - name: Install docker
       ansible.builtin.include_tasks: tasks/docker.yml
 
-    # - name: Deploy docker apps to main
-    #   ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
-    #   loop:
-    #     - duplicati
-    #     - filebrowser
-    #     - heimdall
-    #     - monitoring
-    #     - syncthing
-    #     - uptime_kuma
-    #   when: server | default (false)
+    - name: Deploy docker apps to main
+      ansible.builtin.include_tasks: "tasks/{{ item }}.yml"
+      loop:
+        - duplicati
+        - filebrowser
+        - heimdall
+        - monitoring
+        - syncthing
+        - uptime_kuma
+      when: server | default (false)
 
     - name: Modify ownership of data and docker_apps directories
       ansible.builtin.include_tasks: tasks/add_ownership.yml
