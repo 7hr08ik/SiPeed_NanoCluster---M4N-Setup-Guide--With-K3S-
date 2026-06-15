@@ -1,4 +1,4 @@
-# SiPeed Nanocluster - M4N Module Setup
+# AMPG: SiPeed Nanocluster - M4N Dock AI Homelab Setup
 
 The following is what I came up with going down a few rabbit holes. I tried updating the kernel, tried u-boot, don't know serial stuff, and its usb-c serial on these, expanded the boot partition, renaming files, come to the conclusion im stuck with the default 5.15.73 kernel. Im thinking its a custom kernel, and they've stuck the fat16 64MB boot partition to prevent any automatic updates so new kernel headers don't mess with programs your trying to install with ansible playbooks your currently learning and understanding. I learned something about something new, and I decided to share
 
@@ -54,8 +54,6 @@ Start by tweaking the config file and giving the install its MAC address.
 ##### 10. Set the MAC Address
 
 Edit the config.txt
-
-Uncomment `pipe_cfg=0x04`
 
 At the bottom add this:
 ```
