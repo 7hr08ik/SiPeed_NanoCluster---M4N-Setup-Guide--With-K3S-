@@ -28,6 +28,8 @@ pnpm-debug.log*
 # AI Template files
 .codegraph/
 .opencode/
+openspec/
+adr/
 Project_Notes.md
 Project_Log.md
 
