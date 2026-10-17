@@ -37,6 +37,9 @@ RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
+
+# Then edit the service file to replace <mac_address> with your actual MAC address, e.g.:
+# ExecStart=/usr/bin/macchanger -m d0:00:00:00:00:01 eth0
 ```
 
 Enable the service
@@ -63,7 +66,7 @@ sudo nano /etc/fstab
 
 ## Reboot
 
-## END?
+## Next Steps
 
 At this point I would consider the M4N Modules "Up and ready". They are all installed, working SSH connections and repeatable connections.
 

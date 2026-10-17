@@ -1,6 +1,6 @@
 # AMPG: SiPeed Nanocluster - M4N Dock AI Homelab Setup
 
-The following is what I came up with going down a few rabbit holes. I tried updating the kernel, tried u-boot, don't know serial stuff, and its usb-c serial on these, expanded the boot partition, renaming files, come to the conclusion im stuck with the default 5.15.73 kernel. Im thinking its a custom kernel, and they've stuck the fat16 64MB boot partition to prevent any automatic updates so new kernel headers don't mess with programs your trying to install with ansible playbooks your currently learning and understanding. I learned something about something new, and I decided to share
+I came up with this setup going down a few rabbit holes. I tried updating the kernel, tried u-boot, and figured out the USB-C serial on these modules. I expanded the boot partition and renamed files — came to the conclusion I'm stuck with the default 5.15.73 kernel. I'm thinking it's a custom kernel, and they've stuck the fat16 64MB boot partition to prevent any automatic updates so new kernel headers don't mess with programs you're trying to install with ansible playbooks you're currently learning and understanding. I learned something about something new, and I decided to share.
 
 Items needed:
   - SiPeed Nanocluster
@@ -51,7 +51,7 @@ Start by tweaking the config file and giving the install its MAC address.
     - dtbs/m4ncluster.dtb
 
 
-##### 10. Set the MAC Address
+## 10. Set the MAC Address
 
 Edit the config.txt
 
@@ -82,7 +82,7 @@ Now we Install the OS onto the module
 
 1. Login to the live system
     - User: root
-    - Psswd: root
+    - Password: root
 
 2. Open Terminal, and run the install script. `It will reboot the device`
 ```
@@ -151,7 +151,7 @@ Mount BOOT partition
 - Edit config.txt
 - Change the ethaddr.
 
-goto [10](#####10.)
+goto [10](#10-set-the-mac-address)
 
 
 # FINALLY!!!
@@ -159,15 +159,13 @@ Now is the time to power it off, and plug in....ALL 4 MODULES!!!
 
 Power on the machine.
 ```
-POWER = True;
+Once all 4 modules connect through SSH and power is on:
 
-if (all 4 modules connect through ssh) && POWER {
-  PARTY()
-  ResetDesk()
-  Continue
-} else {
-  Weep(inShower)
-}
+```bash
+# Party time!
+# Reset your desk
+# Continue with the rest of the setup
+```
 ```
 
 Share ssh keys between your systems. All 4 nodes will need to talk to each other across SSH.

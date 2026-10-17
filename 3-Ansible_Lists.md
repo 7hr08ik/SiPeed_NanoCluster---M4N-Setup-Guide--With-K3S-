@@ -56,15 +56,15 @@ m4ncluster:
 
 ## k3s
 
-This is the distribution of Kubernetes that SiPeed has on their own site. Looking at thier instructions, there is no specific actions to take for our devices. So....
+This is the distribution of Kubernetes that SiPeed has on their own site. Looking at their instructions, there is no specific actions to take for our devices. So...
 
 k3s Ansible Playbooks by the k3s team. [https://github.com/k3s-io/k3s-ansible](https://github.com/k3s-io/k3s-ansible)
 
 Download the repo
 
-Goto /playbooks/site.yml
-    - Line: 9
-        - REMOVE: role: raspberrypi
+Goto `/playbooks/site.yml`
+    - Line 9:
+        - REMOVE: `role: raspberrypi`
 
-We want a 'Standard' Debian install. The RasPI tweaks break things
+We want a 'Standard' Debian install. The RasPi tweaks break things.
 
