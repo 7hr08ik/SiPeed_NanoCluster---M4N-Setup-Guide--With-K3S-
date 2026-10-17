@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+.pnp.*
+M4N_OS/
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+coverage/
+
+# Runtime and package-manager caches
+.ansible/
+.cache/
+.parcel-cache/
+.turbo/
+.vscode/
+.vite/
+.eslintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# AI Template files
+.codegraph/
+.opencode/
+Project_Notes.md
+Project_Log.md
+
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+/secrets/**
+*.crt
+*.key
+*.pem
+Cluster_Details.txt
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.log
+
+# acceptance test artefacts
+acceptance-tests/.venv/
+acceptance-tests/.extracted/
+acceptance-tests/reports/
