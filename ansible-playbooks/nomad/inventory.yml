@@ -1,0 +1,26 @@
+prod:
+  children:
+    nanocluster:
+  vars:
+    ansible_user: dev
+    ansible_ssh_pass: password123
+    ansible_ssh_private_key_file: /home/rob/.ssh/id_ed25519
+    datacenter: prod
+    domain: home.com
+    docker: false
+
+nanocluster:
+  hosts:
+    m4ncluster-node-1:
+      ansible_host: 10.69.30.51
+      server: true
+      client: true
+    m4ncluster-node-2:
+      ansible_host: 10.69.30.52
+      client: true
+    m4ncluster-node-3:
+      ansible_host: 10.69.30.53
+      client: true
+    m4ncluster-node-4:
+      ansible_host: 10.69.30.54
+      client: true
