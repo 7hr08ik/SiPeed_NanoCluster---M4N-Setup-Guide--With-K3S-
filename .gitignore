@@ -20,12 +20,14 @@ coverage/
 .vscode/
 .vite/
 .eslintcache
+.yamllint
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
 # AI Template files
+.ansible/
 .codegraph/
 .opencode/
 openspec/

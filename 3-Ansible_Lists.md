@@ -1,10 +1,10 @@
-# Prerequisites
+## Prerequisites
 
 ```
 ansible-galaxy collection install community.general
 ```
 
-# Setup Inventory
+## Setup Inventory
 
 Inventory contents
 ```
@@ -19,40 +19,6 @@ m4ncluster:
         ansible_password: <Password_we_made>
         ansible_ssh_private_key_file: /home/<Username_we_made>/.ssh/id_ed25519
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## k3s
 
