@@ -1,0 +1,11 @@
+- name: Set arm64 architecture
+  ansible.builtin.set_fact:
+    cni_arch: arm64
+  when: ansible_facts["architecture"] == "aarch64"
+
+- name: Install cni-plugins
+  shell: |
+    curl -L -o cni-plugins.tgz "https://github.com/containernetworking/plugins/releases/download/{{ cni_plugin_version }}/cni-plugins-linux-{{ cni_arch }}-{{ cni_plugin_version }}".tgz &&
+    mkdir -p /opt/cni/bin &&
+    tar -C /opt/cni/bin -xzf cni-plugins.tgz
+  become: true

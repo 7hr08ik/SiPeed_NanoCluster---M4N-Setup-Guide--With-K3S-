@@ -1,0 +1,8 @@
+- name: Deploy nomad Prod
+  hosts:
+    - prod
+  become: true
+  roles:
+    - nomad
+  tags:
+    - prod

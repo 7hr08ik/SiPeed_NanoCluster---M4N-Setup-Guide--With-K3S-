@@ -1,0 +1,24 @@
+- name: Install Required Tools (Debian/Ubuntu)
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: true
+  loop:
+    - gnupg
+    - wget
+    - apt-transport-https
+  when: ansible_os_family == "Debian"
+
+- name: Download and install HashiCorp GPG key (Debian/Ubuntu)
+  ansible.builtin.shell: |
+    wget -qO - https://apt.releases.hashicorp.com/gpg | gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+  args:
+    creates: /usr/share/keyrings/hashicorp-archive-keyring.gpg
+  when: ansible_os_family == "Debian"
+
+- name: Add HashiCorp APT repository
+  ansible.builtin.apt_repository:
+    repo: "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com {{ ansible_distribution_release | lower }} main"
+    filename: hashicorp
+    state: present
+  when: ansible_os_family == "Debian"
